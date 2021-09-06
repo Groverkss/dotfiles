@@ -1,0 +1,89 @@
+[global]
+    font = Ubuntu Bold 12
+
+    allow_markup = yes
+    # The format of the message. Possible variables are:
+    #   %a  appname
+    #   %s  summary
+    #   %b  body
+    #   %i  iconname (including its path)
+    #   %I  iconname (without its path)
+    #   %p  progress value if set ([  0%] to [100%]) or nothing
+    # format = "<b>%a:</b> %s\n%b"
+    format = "<b>%s</b>\n%b\n"
+
+    sort = yes
+
+    indicate_hidden = yes
+    alignment = center
+    bounce_freq = 0
+    show_age_threshold = 60
+
+    ellipsize = middle
+    word_wrap = yes
+    ignore_newline = no
+    # 35: polybar height
+    geometry = "500x5-0-35"
+    transparency = 0
+
+    idle_threshold = 60
+    monitor = 0
+    follow = keyboard
+    sticky_history = yes
+
+    line_height = 0
+    separator_height = 2
+    padding = 8
+    horizontal_padding = 8
+
+    # Define a color for the separator.
+    # possible values are:
+    #  * auto: dunst tries to find a color fitting to the background
+    #  * foreground: use the same color as the foreground
+    #  * frame: use the same color as the frame.
+    #  * anything else will be interpreted as a X color
+    separator_color = auto
+    startup_notification = true
+
+    # dmenu path
+    icon_position = left
+    max_icon_size = 100
+
+    icon_path = /usr/share/icons/Pop/16x16/status:/usr/share/icons/Pop/16x16/devices/:/usr/share/icons/Pop/16x16/apps/:/usr/share/icons/Pop/16x16/actions
+
+[frame]
+    width = 0
+    color = "#000000"
+
+[shortcuts]
+    close = mod4+x
+    close_all = mod4+shift+x
+    history = mod4+n
+
+    # context menu
+    context = mod4+shift+i
+
+[urgency_low]
+    background = "#222222"
+    foreground = "#888888"
+    timeout = 2
+
+[urgency_normal]
+    background = "#285577"
+    foreground = "#ffffff"
+    timeout = 5
+
+[urgency_critical]
+    background = "#900000"
+    foreground = "#ffffff"
+    timeout = 0
+
+#[ignore_teams]
+#    appname = "Microsoft Teams - Preview"
+#    format = ""
+
+# [play_sound]
+#     summary = "*"
+#     script = /home/yog/bin/alert.sh
+
+# vim:ft=dosini
