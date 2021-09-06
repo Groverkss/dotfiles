@@ -1,0 +1,113 @@
+body,
+#tab_bar_underpadding {
+    background-color: #222;
+    color: #444;
+}
+hr.date-line {
+    border-top: 1px solid #555;
+    border-bottom: 1px solid #666;
+}
+.header {
+    background-color: #333;
+    border-bottom: #111;
+}
+#search_query {
+    background-color: inherit;
+    color: #666;
+}
+.app-main .column-middle {
+    min-height: 100%;
+    background-color: inherit;
+}
+ul.filters a {
+    color: #eee;
+}
+ul.filters a:hover {
+    color: #333;
+}
+.message-header-contents {
+    border-right-color: #666;
+    background: #666;
+}
+.user-mention {
+    color: #555;
+}
+.navbar-search {
+    border-right-color: inherit;
+}
+#global_filters li:hover,
+#stream_filters li:hover,
+#group-pms li:hover,
+#user_presences li:hover {
+    background-color: #666;
+}
+li.active-filter,
+li.active-sub-filter {
+    background-color: #666;
+    color: #333;
+}
+li.active-filter a,
+li.active-sub-filter a,
+li.user_sidebar_entry {
+    color: #eee
+}
+ul.filters li.muted_topic,
+ul.filters li.out_of_home_view {
+    opacity: 0.3;
+    color: #333;
+}
+.compose-content {
+    background-color: #222;
+    border-color: #333;
+}
+.private-message .messagebox,
+.message_header_private_message .message-header-contents,
+.message_list .recipient_row,
+.messagebox,
+.message_row {
+    background-color: #333;
+    border-color: #444;
+    color: #eee;
+}
+.sender_name {
+    color: #efefef;
+}
+#compose .new-style .button,
+#compose textarea,
+#compose input[type="text"],
+.input-append input[type="text"],
+#preview_message_area {
+    background-color: #111;
+    color: #aaa;
+    border-color: #aaa;
+}
+#navbar-buttons ul.nav li.active .dropdown-toggle:hover,
+#searchbox a.search_icon:hover,
+.close,
+.clear_search_button:hover {
+    color: #aaa;
+}
+.sub-unsub-message span,
+.date_row span {
+    text-shadow: none;
+}
+.sub-unsub-message span:before,
+.sub-unsub-message span:after,
+.date_row span:before,
+.date_row span:after,
+.date_row .date-line {
+    border-color: #eee;
+    color: #eee;
+}
+.private-message .messagebox .mention,
+.mention .messagebox {
+	background-color: hsl(8,94%,94%);
+    color: #333;
+}
+.mention .sender_name {
+    color: #444;
+}
+.alert-word {
+    color: #222;
+}
+{"mode":"full","isActive":false}
