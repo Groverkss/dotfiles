@@ -1,0 +1,86 @@
+" Set no compatiblity mode
+set nocompatible
+
+" Remap escape
+inoremap jk <Esc>
+
+" Some needed settings
+set number
+set encoding=utf8
+set colorcolumn=80 tabstop=4 shiftwidth=4 softtabstop=4
+set showcmd
+set expandtab
+set autoread
+set cursorline
+set wildmenu
+set relativenumber
+
+" Sets the clipboard to system clipboard
+set clipboard=unnamedplus
+
+" Turn on syntax highlighting.
+syntax on
+
+filetype plugin on
+
+" Disable the default Vim startup message.
+set shortmess+=I
+
+" Set Darkmode
+set bg=dark
+
+if &t_Co > 2 || has("gui_running")
+    " Switch on highlighting the last used search pattern.
+    set hlsearch
+endif
+
+" Put these in an autocmd group, so that we can delete them easily.
+augroup vimrcEx
+    au!
+
+    " For all text files set 'textwidth' to 78 characters.
+    autocmd FileType text setlocal textwidth=78
+augroup END
+
+" Add optional packages.
+"
+" The matchit plugin makes the % command work better, but it is not backwards
+" compatible.
+" The ! means the package won't be loaded right away but when plugins are
+" loaded during initialization.
+if has('syntax') && has('eval')
+    packadd! matchit
+endif
+
+" Always show the status line at the bottom, even if you only have one window
+" open.
+set laststatus=2
+
+" This setting makes search case-insensitive when all characters in the string
+" being searched are lowercase. However, the search becomes case-sensitive if
+" it contains any capital letters. This makes searching more convenient.
+set ignorecase
+set smartcase
+
+" Enable searching as you type, rather than waiting till you press enter.
+set incsearch
+
+" Disable audible bell because it's annoying.
+set noerrorbells visualbell t_vb=
+
+" Enable mouse support. You should avoid relying on t
+" is too much, but it can
+" sometimes be convenient.
+set mouse+=a
+
+" Clear highlighted entries
+nnoremap <leader>c :nohl<CR><C-l>
+
+" Vim surround 
+set surround
+
+" Vim commentry
+set commentary
+
+" Ideajoin
+set ideajoin
