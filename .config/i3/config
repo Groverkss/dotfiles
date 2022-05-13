@@ -24,7 +24,10 @@ font pango:monospace 8
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+#
+# auto lock the screen
+# exec "xautolock -detectsleep -time 3 -locker \"i3lock -c 000000\""
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -226,3 +229,6 @@ exec_always xrandr --output HDMI-1-1 --auto --right-of eDP-1-1
 
 # Turn on password saving for chrome
 exec_always --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
+
+# keybinding to lock screen
+bindsym $mod+Shift+w exec "i3lock -c 000000 -i ~/.files/ladkiwallpaper.png"

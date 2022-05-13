@@ -90,9 +90,9 @@ au BufNewFile,BufRead *.py
 
 " For stupid web dev
 au BufNewFile,BufRead *.js,*.html,*.css,*.jsx,*.mjs
-    \ setlocal tabstop=2
-    \| setlocal softtabstop=2
-    \| setlocal shiftwidth=2
+    \ setlocal tabstop=4
+    \| setlocal softtabstop=4
+    \| setlocal shiftwidth=4
 
 " Install Plug if already not installed
 if empty(glob('$HOME/.local/share/nvim/site/autoload/plug.vim'))
@@ -128,9 +128,6 @@ Plug 'vimlab/split-term.vim'
 
 " Vim surround :)
 Plug 'tpope/vim-surround'
-
-" Plugin to allow sudo write
-Plug 'lambdalisue/suda.vim'
 
 " Plugin to show vertical indent bar lines
 Plug 'Yggdroot/indentLine'
@@ -179,18 +176,12 @@ nnoremap <f4> :15Term<CR>
 au FileType python let b:coc_root_patterns = ['.env', 'venv', '.venv', 'env', '__init__.py', '.git', 'setup.cfg', 'setup.py', 'pyrightconfig.json']
 
 " Disable indent line on the following files
-let g:indentLine_fileTypeExclude = ['json', 'md', 'markdown']
+let g:indentLine_fileTypeExclude = ['json', 'md', 'markdown', 'tex']
 let g:indentLine_bufTypeExclude = ['help', 'terminal']
 
 " Black settings
 let g:black_linelength = 80
 let g:black_quiet = 1
-
-" Run Black on save
-autocmd BufWritePre *.py execute ':Black'
-
-" Run Black on pressing <F3>
-nnoremap <F3> :Black<CR>
 
 let g:python3_host_prog = "/usr/bin/python3"
 
@@ -234,6 +225,9 @@ endfunction
 " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-" Clang format options
-nmap <silent> <leader>f :ClangFormat<CR>
-vmap <silent> <leader>f :ClangFormat<CR>
+" Formatting \f for cpp
+autocmd FileType cpp,c nmap <silent> <buffer> <leader>f :ClangFormat<CR>
+autocmd FileType cpp,c vmap <silent> <buffer> <leader>f :ClangFormat<CR>
+
+" Formatting \f for python
+autocmd FileType python nmap <silent> <buffer> <leader>f :Black<CR>

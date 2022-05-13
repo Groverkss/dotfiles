@@ -85,3 +85,12 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
 setopt HIST_VERIFY
+
+# Add emacs bin to path
+export PATH=$PATH:~/.emacs.d/bin
+
+# Add lean to path
+export PATH=$PATH:~/.elan/bin
+
+alias todo='cat ~/Desktop/TODO.md'
+alias birthdays='ldapsearch -x -H ldap://ldap.iiit.ac.in -b "dc=iiit,dc=ac,dc=in" -s sub "dateOfBirth=*-$(date +'%m-%d')" | tail -n +8 | head -n -7 | grep \#'
