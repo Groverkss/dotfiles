@@ -1,0 +1,9 @@
+[user]
+	email = groverkss@gmail.com
+	name = Groverkss
+[core]
+	editor = nvim
+[alias]
+	adog = log --all --decorate --oneline --graph
+[credential]
+	helper = store
